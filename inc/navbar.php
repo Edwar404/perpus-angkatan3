@@ -7,7 +7,11 @@
           <div class="navbar-nav">
             <a class="nav-link active me-3" aria-current="page" href="index.php">Dashboard</a>
             <a class="nav-link me-3" href="?pg=table-anggota">Manage Accounts</a>
-            <a class="nav-link me-3" href="?pg=table-buku">Manage Books</a>
+            <a class="nav-link me-3" href="?pg=kategori">Kategori</a>
+            <a class="nav-link me-3" href="?pg=buku">Manage Books</a>
+            <a class="nav-link me-3" href="?pg=level">Level</a>
+            <a class="nav-link me-3" href="?pg=peminjaman">Peminjaman</a>
+            <a class="nav-link me-3" href="?pg=anggota">Anggota</a>
           </div>
         </div>
       </div>
