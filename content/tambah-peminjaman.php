@@ -77,8 +77,8 @@ $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
                                     <select name="id_anggota" id="" class="form-control" required>
                                         <option value="">Pilih Anggota</option>
                                         <!-- ini ngambil data dari tabel anggota -->
-                                        <?php while ($rowAngoota = mysqli_fetch_assoc($queryAnggota)): ?>
-                                            <option value="<?php echo $rowAngoota['id'] ?>"><?php echo $rowAngoota['nama_anggota'] ?></option>
+                                        <?php while ($rowAnggota = mysqli_fetch_assoc($queryAnggota)): ?>
+                                            <option value="<?php echo $rowAnggota['id'] ?>"><?php echo $rowAnggota['nama_anggota'] ?></option>
                                         <?php endwhile ?>
                                     </select>
                                 <?php else: ?>
@@ -123,7 +123,7 @@ $kode_pinjam = "PJM/" . date('dmy') . "/" . sprintf("%03s", $id_pinjam);
                                 <?php $no = 1;
                                 while ($rowDetailPeminjaman = mysqli_fetch_assoc($queryDetailPinjam)) : ?>
                                     <tr>
-                                        <td><?php $no++ ?></td>
+                                        <td><?php echo $no++ ?></td>
                                         <td><?php echo $rowDetailPeminjaman['nama_buku'] ?></td>
                                     </tr>
                                 <?php endwhile ?>
