@@ -10,8 +10,9 @@
             <a class="nav-link me-3" href="?pg=kategori">Kategori</a>
             <a class="nav-link me-3" href="?pg=buku">Manage Books</a>
             <a class="nav-link me-3" href="?pg=level">Level</a>
-            <a class="nav-link me-3" href="?pg=peminjaman">Peminjaman</a>
             <a class="nav-link me-3" href="?pg=anggota">Anggota</a>
+            <a class="nav-link me-3" href="?pg=peminjaman">Peminjaman</a>
+            <a class="nav-link me-3" href="?pg=pengembalian">pengembalian</a>
           </div>
         </div>
       </div>
