@@ -12,7 +12,7 @@
             <a class="nav-link me-3" href="?pg=level">Level</a>
             <a class="nav-link me-3" href="?pg=anggota">Anggota</a>
             <a class="nav-link me-3" href="?pg=peminjaman">Peminjaman</a>
-            <a class="nav-link me-3" href="?pg=pengembalian">pengembalian</a>
+            <a class="nav-link me-3" href="?pg=pengembalian">Pengembalian</a>
           </div>
         </div>
       </div>

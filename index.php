@@ -50,6 +50,7 @@ include 'koneksi.php';
     ?>
 
     <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/moment.js"></script>
     <script>
         feather.replace();
     </script>
@@ -58,17 +59,36 @@ include 'koneksi.php';
     <script>
         $("#id_peminjaman").change(function() {
             let no_peminjaman = $(this).find('option:selected').val();
-            console.log(no_peminjaman);
+            let tbody = $('tbody'),
+                newRow = "";
             $.ajax({
-                url : "ajax/getPeminjam.php?no_peminjaman=" + no_peminjaman,
-                type : "get",
-                dataType : "json",
+                url: "ajax/getPeminjam.php?no_peminjaman=" + no_peminjaman,
+                type: "get",
+                dataType: "json",
                 success: function(res) {
                     $('#no_pinjam').val(res.data.no_peminjaman);
                     $('#tgl_peminjaman').val(res.data.tgl_peminjaman);
                     $('#tgl_pengembalian').val(res.data.tgl_pengembalian);
                     $('#nama_anggota').val(res.data.nama_anggota);
-                    console.log(res);
+
+                    let tanggal_kembali = new moment(res.data.tgl_pengembalian);
+                    let current_date = new Date().toJSON().slice(0, 10);
+                    let tanggal_di_kembalikan = new moment(current_date);
+                    let selisih = tanggal_di_kembalikan.diff(tanggal_kembali, "days");
+                    if (selisih < 0) {
+                        selisih = 0;
+                    }
+                    let biaya_denda = 100000;
+                    let totalDenda = selisih * biaya_denda;
+                    $('#denda').val(totalDenda);
+
+                    $.each(res.detail_peminjaman, function(key, val) {
+                        newRow += "<tr>";
+                        newRow += "<td>" + val.nama_buku + "</td>";
+                        newRow += "</tr>";
+                    });
+                    tbody.html(newRow);
+
                 }
             });
         });
